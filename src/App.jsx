@@ -41,6 +41,7 @@ function App() {
               return <Post post={post} key={post._id} />;
             })}
           </div>
+          TEST
         </div>
       </div>
       <Footer />
