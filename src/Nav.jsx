@@ -4,7 +4,7 @@ import { useState } from "react";
 function Nav() {
   const [showDropdown, setShowDropdown] = useState(false);
   return (
-    <div className="h-28 bg-neutral-900 text-white flex justify-between px-12">
+    <div className="h-28 bg-neutral-900/80 text-white flex justify-between px-12">
       <h1 className="text-3xl flex items-center h-min my-auto p-4 border">
         WEBSITE NAME
       </h1>

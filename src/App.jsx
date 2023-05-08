@@ -1,8 +1,9 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import axios from "axios";
 import Nav from "./Nav";
 import Footer from "./Footer";
 import Post from "./components/Post";
+
 function App() {
   const [posts, setPosts] = useState([]);
   function getRoute() {
@@ -29,19 +30,43 @@ function App() {
         console.log(error.config);
       });
   }
-
   return (
     <>
-      <div className="bg-red-200 min-h-screen">
+      <div className="min-h-screen">
         <Nav />
-        <button onClick={() => getRoute()}>GETROUTE</button>
-        <div className="h-screen flex justify-center items-center">
-          <div className="h-[500px] w-[500px] bg-white flex flex-col justify-center items-center">
-            {posts.map((post) => {
-              return <Post post={post} key={post._id} />;
-            })}
+        {/* <button onClick={() => getRoute()}>GETROUTE</button> */}
+        <div className="justify-center flex flex-col mt-4 gap-4 text-white">
+          <h1 className="text-2xl text-center w-2/3 mx-auto flex flex-col">
+            <span className="text-3xl">Lorem Ipsum</span> "Neque porro quisquam
+            est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci
+            velit..."
+          </h1>
+          <button className="bg-red-600 rounded py-2 px-6 flex mx-auto font-bold">
+            WOW BUTTON
+          </button>
+        </div>
+        <div className="flex w-full justify-center mt-10 gap-4">
+          <div className="w-1/4 bg-white/10 text-white rounded p-2">
+            <p>
+              Integer facilisis interdum laoreet. Integer ullamcorper magna
+              fermentum, euismod odio ac, mattis arcu. Vivamus laoreet interdum
+              nisl, nec pellentesque tellus pulvinar in.
+            </p>
           </div>
-          TEST
+          <div className="w-1/4 bg-white/10 text-white rounded p-2">
+            <p>
+              Integer facilisis interdum laoreet. Integer ullamcorper magna
+              fermentum, euismod odio ac, mattis arcu. Vivamus laoreet interdum
+              nisl, nec pellentesque tellus pulvinar in.
+            </p>
+          </div>
+          <div className="w-1/4 bg-white/10 text-white rounded p-2">
+            <p>
+              Integer facilisis interdum laoreet. Integer ullamcorper magna
+              fermentum, euismod odio ac, mattis arcu. Vivamus laoreet interdum
+              nisl, nec pellentesque tellus pulvinar in.
+            </p>
+          </div>
         </div>
       </div>
       <Footer />
