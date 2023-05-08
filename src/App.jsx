@@ -36,7 +36,7 @@ function App() {
         <Nav />
         <button onClick={() => getRoute()}>GETROUTE</button>
         <div className="h-screen flex justify-center items-center">
-          <div className="h-[500px] w-[500px] bg-white">
+          <div className="h-[500px] w-[500px] bg-white flex flex-col justify-center items-center">
             {posts.map((post) => {
               return <Post post={post} key={post._id} />;
             })}

@@ -1,11 +1,10 @@
 import React from "react";
 
 function Post(props) {
-  console.log(props.post);
   return (
-    <div>
-      {props.post.username}
-      {props.post.postBody}
+    <div className="flex">
+      <h6>Username: {props.post.username} </h6>
+      <p>Body: {props.post.postBody} </p>
     </div>
   );
 }
