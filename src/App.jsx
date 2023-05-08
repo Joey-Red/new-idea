@@ -2,14 +2,16 @@ import React, { useState } from "react";
 import axios from "axios";
 import Nav from "./Nav";
 import Footer from "./Footer";
-import Account from "./Account";
+import Post from "./components/Post";
 function App() {
+  const [posts, setPosts] = useState([]);
   function getRoute() {
     axios
-      .get("http://localhost:3000/")
+      .get("http://localhost:3000/retrieve-posts")
       .then((response) => {
         // Handle successful response here
-        console.log("success", response.data);
+        setPosts(response.data);
+        // console.log("success", response.data);
       })
       .catch((error) => {
         // Handle error here
@@ -32,11 +34,14 @@ function App() {
     <>
       <div className="bg-red-200 min-h-screen">
         <Nav />
-        {/* <button onClick={() => getRoute()}>GETROUTE</button> */}
+        <button onClick={() => getRoute()}>GETROUTE</button>
         <div className="h-screen flex justify-center items-center">
-          <div className="h-[500px] w-[500px] bg-white">Content woo</div>
+          <div className="h-[500px] w-[500px] bg-white">
+            {posts.map((post) => {
+              return <Post post={post} key={post._id} />;
+            })}
+          </div>
         </div>
-        {/* <Account /> */}
       </div>
       <Footer />
     </>
